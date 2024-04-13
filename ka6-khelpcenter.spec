@@ -1,18 +1,18 @@
 #
 # Conditional build:
 %bcond_with	tests		# build with tests
-%define		kdeappsver	24.02.1
+%define		kdeappsver	24.02.2
 %define		kframever	5.94.0
 %define		qtver		5.15.2
 %define		kaname		khelpcenter
 Summary:	khelpcenter
 Name:		ka6-%{kaname}
-Version:	24.02.1
+Version:	24.02.2
 Release:	1
 License:	GPL v2+/LGPL v2.1+
 Group:		X11/Applications
 Source0:	https://download.kde.org/stable/release-service/%{kdeappsver}/src/%{kaname}-%{version}.tar.xz
-# Source0-md5:	a4a1b07fa9cce70a571aa4c6a240cd29
+# Source0-md5:	07ae9c8bb78bfe70353565e61d09e716
 URL:		http://www.kde.org/
 BuildRequires:	Qt6Core-devel >= 5.15.2
 BuildRequires:	Qt6DBus-devel >= 5.15.2
