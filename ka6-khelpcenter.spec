@@ -1,18 +1,18 @@
 #
 # Conditional build:
 %bcond_with	tests		# build with tests
-%define		kdeappsver	24.05.0
+%define		kdeappsver	24.05.1
 %define		kframever	5.94.0
 %define		qtver		5.15.2
 %define		kaname		khelpcenter
 Summary:	khelpcenter
 Name:		ka6-%{kaname}
-Version:	24.05.0
+Version:	24.05.1
 Release:	1
 License:	GPL v2+/LGPL v2.1+
 Group:		X11/Applications
 Source0:	https://download.kde.org/stable/release-service/%{kdeappsver}/src/%{kaname}-%{version}.tar.xz
-# Source0-md5:	b6aa68b0d55ed41bd35afde7165542aa
+# Source0-md5:	6eedfd0dc215968382b3bcb1ef83f467
 URL:		http://www.kde.org/
 BuildRequires:	Qt6Core-devel >= 5.15.2
 BuildRequires:	Qt6DBus-devel >= 5.15.2
@@ -58,6 +58,7 @@ BuildRequires:	xapian-core-devel
 BuildRequires:	xz
 Requires:	%{name}-data = %{version}-%{release}
 Requires:	perl-base
+Obsoletes:	ka5-%{kaname} < %{version}
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
@@ -70,6 +71,7 @@ Centrum pomocy KDE.
 Summary:	Data files for %{kaname}
 Summary(pl.UTF-8):	Dane dla %{kaname}
 Group:		X11/Applications
+Obsoletes:	ka5-%{kaname}-data < %{version}
 BuildArch:	noarch
 
 %description data
