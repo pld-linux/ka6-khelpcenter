@@ -1,18 +1,18 @@
 #
 # Conditional build:
 %bcond_with	tests		# build with tests
-%define		kdeappsver	24.08.3
+%define		kdeappsver	24.12.0
 %define		kframever	5.94.0
 %define		qtver		5.15.2
 %define		kaname		khelpcenter
 Summary:	khelpcenter
 Name:		ka6-%{kaname}
-Version:	24.08.3
+Version:	24.12.0
 Release:	1
 License:	GPL v2+/LGPL v2.1+
 Group:		X11/Applications
 Source0:	https://download.kde.org/stable/release-service/%{kdeappsver}/src/%{kaname}-%{version}.tar.xz
-# Source0-md5:	6be67c1dd6f5bf324eb7512a2d8847a8
+# Source0-md5:	92ea0d268f8f5a3be5b5dfabda5a1389
 URL:		http://www.kde.org/
 BuildRequires:	Qt6Core-devel >= 5.15.2
 BuildRequires:	Qt6DBus-devel >= 5.15.2
@@ -57,7 +57,7 @@ BuildRequires:	tar >= 1:1.22
 BuildRequires:	xapian-core-devel
 BuildRequires:	xz
 Requires:	%{name}-data = %{version}-%{release}
-Requires:	perl-base
+Requires:	python3
 Obsoletes:	ka5-%{kaname} < %{version}
 ExcludeArch:	x32 i686
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
@@ -110,7 +110,7 @@ rm -rf $RPM_BUILD_ROOT
 %files
 %defattr(644,root,root,755)
 %attr(755,root,root) %{_bindir}/khelpcenter
-%attr(755,root,root) %{_prefix}/libexec/khc_mansearch.pl
+%attr(755,root,root) %{_prefix}/libexec/khc_mansearch.py
 %attr(755,root,root) %{_prefix}/libexec/khc_xapianindexer
 %attr(755,root,root) %{_prefix}/libexec/khc_xapiansearch
 
